@@ -14,6 +14,7 @@ partition "Search for Solutions" {
             :Apply Tactic A;
         if (found elsewhere?) then ([stop])
             end
+            note left: Flow Final Node
         endif
         repeat while (found?) is (no) not (yes)
         :Post Solution;
