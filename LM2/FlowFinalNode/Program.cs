@@ -16,7 +16,7 @@ public static class Program
     
     //threads, synchronization, counters, and stopwatch
     private static Thread[]? _solutionSearchThreads;
-    private static double  _solutionFoundValue = Double.NaN;
+    private static double  _solutionFoundValue = Double.NaN; //search until this shared variable is no longer NaN
     private static readonly object SolutionFoundLock = new object();
     private static int _overallSearchIterationCount = 0;
     private static Stopwatch _stopwatch = new Stopwatch();

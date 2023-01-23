@@ -1,0 +1,26 @@
+@startuml
+
+'Documentation
+'https://plantuml.com/activity-diagram-beta
+
+'Online Editor
+'http://www.plantuml.com/plantuml/dumla/SoWkIImgAStDuNBAJrBGjLDmpCbCJbMmKiX8pSd9vt98pKi1IW80
+
+start
+partition "Do Laundry" {
+    :Sort Clothes;
+
+    
+    fork
+        :Wash Whites;
+    fork again
+        :Wash Darks;
+    end fork
+    note right: fork node
+    note right: join node
+
+    :Dry Clothes;
+    :Fold Clothes;
+    stop
+}
+@enduml
