@@ -88,10 +88,11 @@ public static class Program
                 Thread.Sleep(rnd.Next(250, 1000)); //simulate search effort
             
             searchValue = rnd.NextDouble();
+            foundSearchValue = IsSearchValueFound(searchValue);
             Console.WriteLine($"{Thread.CurrentThread.Name}: Search iteration {++iterationCount}, " +
                               $"found: {searchValue}, " +
-                              $"{(IsSearchValueFound(searchValue) ? ":)" : ":(")}");
-            foundSearchValue = IsSearchValueFound(searchValue);
+                              $"{(foundSearchValue ? ":)" : ":(")}");
+            
         } while (double.IsNaN(_solutionFoundValue) && !foundSearchValue);
 
         lock (SolutionFoundLock)
