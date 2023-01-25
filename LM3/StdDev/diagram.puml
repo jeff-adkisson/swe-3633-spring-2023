@@ -1,0 +1,31 @@
+@startuml
+'Documentation
+'https://plantuml.com/activity-diagram-beta
+
+'Online Editor
+'http://www.plantuml.com/plantuml/dumla/SoWkIImgAStDuNBAJrBGjLDmpCbCJbMmKiX8pSd9vt98pKi1IW80
+
+start
+:input: list<int[1..*]> ]
+partition "StdDevs of N Integer Arrays" {
+    :stdDev: float[list.size] ]
+    note right: Init stdDev array to size of input list
+    fork
+        :Compute StdDev for input[0];
+        :stdDev[0]=StdDev(input[0]) ]
+    fork again
+       :Compute StdDev for input[...];
+       :stdDev[...]=StdDev(input[...]) ]
+    fork again
+       :Compute StdDev for input[n];
+       :stdDev[n]=StdDev(input[n]) ]
+    end fork
+    :i=0]
+    while (i < input.size) is (yes)
+       :Show StdDev\nfor stdDev[i];
+       :i = i + 1]
+    endwhile
+      ->complete;
+}
+stop
+@enduml
