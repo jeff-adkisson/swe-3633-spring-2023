@@ -26,7 +26,7 @@ Thread 9 finished in 55ms
 All threads finished in 58ms
 
 Standard Deviations for 9 Lists of Integers:
-1) Elements:   190,790    StdDev:  12,116,243.877![img.png](img.png)
+1) Elements:   190,790    StdDev:  12,116,243.877
 2) Elements:     5,196    StdDev:  60,123,001.614
 3) Elements:    35,673    StdDev: 212,130,078.320
 4) Elements:   876,235    StdDev:  61,083,062.252
