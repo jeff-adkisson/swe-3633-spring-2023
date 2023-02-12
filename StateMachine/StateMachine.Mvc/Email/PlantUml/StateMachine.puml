@@ -5,7 +5,7 @@ StartOfWord : Loop until [azAZ09-.] found or complete
 StartOfWord --> CaptureName : Found valid char
 StartOfWord --> [*] : No more chars to process
 
-CaptureName : Loop while [azAZ09-.] found or @ char
+CaptureName : Record start index\nLoop while [azAZ09-.] found or @ char
 CaptureName --> CaptureDomain : Found @ char
 CaptureName --> StartOfWord : Found invalid char
 

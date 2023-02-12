@@ -49,7 +49,7 @@ var matches = Email.Finder.Find(model.TextToScan);
 
 # State Machine Diagram 
 
-![State Machine Diagram](http://www.plantuml.com/plantuml/svg/bPDHIyCm58NVyolEix0nVNCFig4J1cE24mJd7c9pwyBIt98cS_hhRLg7hN68J-EEyvtxNKWdbPVEXyA8zTa6Wy4LLl6Fk_oHdS8OzvIHtclxYXV3sGwSOxfSpUVmTF12zCCBvXB1UcsmbX_Jfz7bOBX1pi4gi4F6HMd8Ku-AAwzbwOEZfIoeRhbjydjfj4AsbIw9HzCnbeo27JMH2fvHEiwegeJerRLIRrjjw5UfILFGPRfADrn8ROzIfy9TmMDKsyu5ucTTAjLH6hPGZ-bAFN2ve3sPljnfx6yzaJIddXVmZFFHjsz4gzOwuV-n_3GwLMfM3wR-TLHLDJwhOSxXkOI9OQWstKg818WLa5-JhE7cjKDRHOTuJiOslcDmy6NmaCx9zwGbkQATO9XtySF8sJrR6sieOiTzOa9MXS9y0W00)
+![State Machine Diagram](http://www.plantuml.com/plantuml/svg/ZPD1Qm8n58Jl-HLpBYYsjteeIcj140krKAXwI3TlQp2RjsIprlRNryHAewdWQNdBpBnlTfD1uwNpRMN4_6g9JkSEi_3YgNnbfz37CnMaDzf-uDrmiGQN64vdup4yRRqGn-89SutMUcqmbz_3jzvjfxj4oQrLO8U2gzgGfzGLLzxBshUEfh8YzF4OzHjfj4AnaYwJ1z8-feoA7KL90y-e7HVKD4AaSR51CCQUq5RHTc4ZwETA6_eNT113qvmKyu4hgUq1z9muXJv8jKrQYTEu72f1waRJYIU1Uk5wGXio9t1dR9VWPS4vvWqyuxhtXnl_nHuwzr---xnrgDHeDvZTqr7JxEoZy7rAUAvXWXXghzv3YCmG8Y1_9scF3aQeKx0DHnlS-hhraCx9hombRn4d6EPrk2ibkuMr8OQ2xR1F3CYgjZ8_)
 
 # State Machine Class Diagram
 
@@ -65,7 +65,7 @@ StartOfWord : Loop until [azAZ09-.] found or complete
 StartOfWord --> CaptureName : Found valid char
 StartOfWord --> [*] : No more chars to process
 
-CaptureName : Loop while [azAZ09-.] found or @ char
+CaptureName : Record start index\nLoop while [azAZ09-.] found or @ char
 CaptureName --> CaptureDomain : Found @ char
 CaptureName --> StartOfWord : Found invalid char
 
