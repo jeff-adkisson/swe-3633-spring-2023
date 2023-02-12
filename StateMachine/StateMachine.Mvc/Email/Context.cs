@@ -15,7 +15,7 @@ public class Context
 
     public bool IsComplete => string.IsNullOrWhiteSpace(TextToScan) || CurrentPosition >= TextToScan.Length;
 
-    public int CurrentPosition { get; set; }
+    private int CurrentPosition { get; set; }
 
     /// <summary>
     /// Returns current character or char(0) if at end of string

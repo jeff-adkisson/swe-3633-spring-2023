@@ -4,7 +4,6 @@ class Context {
     + Context(textToScan:string?)
     + Matches : IEnumerable<Match> <<get>>
     + IsComplete : bool <<get>>
-    + CurrentPosition : int <<get>> <<set>>
     + CurrentCharacter : char <<get>>
     + AddMatch() : void
     + AdvancePosition() : void
@@ -14,13 +13,13 @@ class Context {
 class Finder <<static>> {
     + {static} Find(text:string?) : Match[]
 }
-note top of Finder : Static helper to execute state machine
+note top of Finder : Executes state machine and returns Match array
 
 class Match {
     + EmailAddress : string <<get>>
     + StartIndex : int <<get>>
 }
-Finder *-- Match
+Finder -- Match : 0..*
 
 interface IState {
     GetNextState() : IState
