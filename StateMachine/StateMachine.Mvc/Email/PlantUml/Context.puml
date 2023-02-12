@@ -1,0 +1,12 @@
+@startuml
+class Context {
+    + Context(textToScan:string?)
+    + Matches : IEnumerable<Match> <<get>>
+    + IsComplete : bool <<get>>
+    + CurrentPosition : int <<get>> <<set>>
+    + CurrentCharacter : char <<get>>
+    + AddMatch() : void
+    + AdvancePosition() : void
+    + SetCurrentStartIndex() : void
+}
+@enduml

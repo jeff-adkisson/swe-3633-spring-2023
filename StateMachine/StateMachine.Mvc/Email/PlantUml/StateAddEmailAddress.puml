@@ -1,0 +1,7 @@
+@startuml
+class StateAddEmailAddress {
+    + StateAddEmailAddress(context:Context)
+    + <<override>> GetNextState() : IState
+}
+StateBase <|-- StateAddEmailAddress
+@enduml

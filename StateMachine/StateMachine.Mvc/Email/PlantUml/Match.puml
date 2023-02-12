@@ -1,0 +1,6 @@
+@startuml
+class Match {
+    + EmailAddress : string <<get>>
+    + StartIndex : int <<get>>
+}
+@enduml

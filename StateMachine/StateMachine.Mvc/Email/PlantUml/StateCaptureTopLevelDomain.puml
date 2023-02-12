@@ -1,0 +1,7 @@
+@startuml
+class StateCaptureTopLevelDomain {
+    + StateCaptureTopLevelDomain(context:Context)
+    + <<override>> GetNextState() : IState
+}
+StateBase <|-- StateCaptureTopLevelDomain
+@enduml

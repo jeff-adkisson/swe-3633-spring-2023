@@ -1,0 +1,42 @@
+﻿@model StateMachine.MVC.Models.FindEmailAddressesModel
+
+@{
+    ViewData["Title"] = "Find Email Addresses";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+            {
+                <div class="form-group">
+                    @Html.LabelFor(l => l.TextToScan, "Text to Scan for Valid Email Addresses")
+                    @Html.TextAreaFor(m => m.TextToScan, new { @class = "form-control", rows = 10 })
+                </div>
+                <button type="submit" class="btn btn-primary my-3">Find Email Addresses</button>
+            }
+        </div>
+    </div>
+
+    @if (Model.Matches != null)
+    {
+        <div class="row">
+            <div class="col-12">
+                @if (Model.Matches.Any())
+                {
+                    <strong>Found @Model.Matches.Count Valid Email Addresses:</strong>
+                    <ol>
+                        @foreach (var match in Model.Matches)
+                        {
+                            <li>@match.EmailAddress, @match.StartIndex</li>
+                        }
+                    </ol>
+                }
+                else
+                {
+                    <strong>No Valid Email Addresses Found</strong>
+                }
+            </div>
+        </div>
+    }
+</div>

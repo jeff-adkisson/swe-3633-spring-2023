@@ -1,0 +1,9 @@
+@startuml
+class CharacterMatch <<static>> {
+    + {static} IsAlphanumeric(character:char) : bool
+    + {static} IsAlphanumericOrSymbol(character:char) : bool
+    + {static} IsWordBreak(character:char) : bool
+    + {static} IsAmpersand(character:char) : bool
+    + {static} IsDot(character:char) : bool
+}
+@enduml

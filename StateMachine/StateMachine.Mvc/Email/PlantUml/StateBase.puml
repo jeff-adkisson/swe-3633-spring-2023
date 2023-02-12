@@ -1,0 +1,6 @@
+@startuml
+abstract class StateBase {
+    + {abstract} GetNextState() : IState
+}
+IState <|-- StateBase
+@enduml

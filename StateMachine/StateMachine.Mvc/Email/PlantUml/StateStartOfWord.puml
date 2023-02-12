@@ -1,0 +1,12 @@
+@startuml
+class StateStartOfWord {
+    + StateStartOfWord(context:Context)
+    + <<override>> GetNextState() : IState
+}
+class StateAdvanceToNextWord {
+    + StateAdvanceToNextWord(context:Context)
+    + <<override>> GetNextState() : IState
+}
+StateBase <|-- StateStartOfWord
+StateBase <|-- StateAdvanceToNextWord
+@enduml
