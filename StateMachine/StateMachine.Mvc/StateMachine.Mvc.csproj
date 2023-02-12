@@ -7,8 +7,4 @@
         <RootNamespace>StateMachine.MVC</RootNamespace>
     </PropertyGroup>
 
-    <ItemGroup>
-      <Folder Include="Email\PlantUml" />
-    </ItemGroup>
-
 </Project>

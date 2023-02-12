@@ -41,6 +41,12 @@ Found 3 Valid Email Addresses:
  3. JeffAdkisson@KSU.university, 69
 ```
 
+# Calling the State Machine
+
+```csharp
+var matches = Email.Finder.Find(model.TextToScan);
+```
+
 # State Machine Diagram 
 
 ![State Machine Diagram](http://www.plantuml.com/plantuml/svg/bPDHIyCm58NVyolEix0nVNCFig4J1cE24mJd7c9pwyBIt98cS_hhRLg7hN68J-EEyvtxNKWdbPVEXyA8zTa6Wy4LLl6Fk_oHdS8OzvIHtclxYXV3sGwSOxfSpUVmTF12zCCBvXB1UcsmbX_Jfz7bOBX1pi4gi4F6HMd8Ku-AAwzbwOEZfIoeRhbjydjfj4AsbIw9HzCnbeo27JMH2fvHEiwegeJerRLIRrjjw5UfILFGPRfADrn8ROzIfy9TmMDKsyu5ucTTAjLH6hPGZ-bAFN2ve3sPljnfx6yzaJIddXVmZFFHjsz4gzOwuV-n_3GwLMfM3wR-TLHLDJwhOSxXkOI9OQWstKg818WLa5-JhE7cjKDRHOTuJiOslcDmy6NmaCx9zwGbkQATO9XtySF8sJrR6sieOiTzOa9MXS9y0W00)
@@ -66,7 +72,6 @@ CaptureName --> StartOfWord : Found invalid char
 CaptureDomain : Loop while [azAZ09] found or . char
 CaptureDomain --> CaptureTopLevelDomain : Found . char
 CaptureDomain --> StartOfWord : Found invalid char
-
 
 CaptureTopLevelDomain : Loop while 2 to 10 [azAZ09] chars found
 CaptureTopLevelDomain --> StartOfWord : Found invalid char
