@@ -8,11 +8,11 @@ public static class SampleTextContainer
     {
         var actualMatches = new Match[]
         {
-            new("Jeff-Adkisson@KSU.edu", 612),
-            new("j.adkisson@KSU.edu", 638),
-            new("JeffAdkisson@KSU.university", 661),
-            new("Jeff-Adkisson@KSU.edu", 1944),
-            new("j.adkisson@KSU.edu", 1977)
+            new("Jeff-Adkisson@KSU.edu", 608),
+            new("j.adkisson@KSU.edu", 634),
+            new("JeffAdkisson@KSU.university", 657),
+            new("Jeff-Adkisson@KSU.edu", 1927),
+            new("j.adkisson@KSU.edu", 1959)
         };
         
         const string text = """
@@ -90,6 +90,18 @@ public static class SampleTextContainer
         This is an honors project and therefore will require you to work out the solution on your own. I can clarify requirements or review specific issues you might have, but I cannot provide coding assistance. The topics covered in this project are covered in some form later in the semester. I do not advise waiting for that. Also, this project goes deeper than the course will on state machines, so you might need to do some research.
         """;
 
-        return new SampleText(text, actualMatches);
+        return new SampleText(NormalizeLineEndings(text), actualMatches);
     }
+    
+    /// <summary>
+    /// Line endings break the index of the matches, so we normalize them to \n to work on all platforms.
+    /// </summary>
+    /// <param name="text"></param>
+    /// <returns></returns>
+    private static string NormalizeLineEndings(string? text)
+    {
+        text ??= "";
+        return text.Replace("\r\n", "\n");
+    }
+
 }
