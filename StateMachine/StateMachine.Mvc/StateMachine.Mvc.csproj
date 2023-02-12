@@ -9,7 +9,6 @@
 
     <ItemGroup>
       <Folder Include="Email\PlantUml" />
-      <Folder Include="Services" />
     </ItemGroup>
 
 </Project>
