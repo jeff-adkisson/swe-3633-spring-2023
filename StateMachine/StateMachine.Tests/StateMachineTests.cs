@@ -32,7 +32,7 @@ public partial class StateMachineTests : TestBase
         
     }
     
-    private bool MatchesRegex(string possibleEmailAddress)
+    private static bool MatchesRegex(string possibleEmailAddress)
     {
         var regex = ValidEmailAddressRegex();
         var match = regex.Match(possibleEmailAddress);
