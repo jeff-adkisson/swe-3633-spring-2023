@@ -1,5 +1,0 @@
-@startuml
-class Finder <<static>> {
-    + {static} Find(text:string?) : Match[]
-}
-@enduml

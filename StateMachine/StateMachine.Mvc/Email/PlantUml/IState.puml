@@ -1,5 +1,0 @@
-@startuml
-interface IState {
-    GetNextState() : IState
-}
-@enduml

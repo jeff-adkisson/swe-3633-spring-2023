@@ -2,5 +2,5 @@
 
 public interface IState
 {
-    IState GetNextState();
+    IState GetNextState(Context context);
 }

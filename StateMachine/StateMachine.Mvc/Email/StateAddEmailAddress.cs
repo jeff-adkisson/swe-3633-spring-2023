@@ -1,16 +1,12 @@
 namespace StateMachine.MVC.Email;
 
-public class StateAddEmailAddress : StateBase
+public class StateAddEmailAddress : IState
 {
-    public StateAddEmailAddress(Context context) : base(context)
+    public IState GetNextState(Context context)
     {
-    }
+        context.AddMatch();
+        context.AdvancePosition();
 
-    public override IState GetNextState()
-    {
-        Context.AddMatch();
-        Context.AdvancePosition();
-
-        return new StateAdvanceToNextWord(Context);
+        return StateFactory.Get<StateAdvanceToNextWord>();
     }
 }

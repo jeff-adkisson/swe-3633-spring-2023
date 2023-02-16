@@ -1,31 +1,26 @@
 ﻿namespace StateMachine.MVC.Email;
 
-public class StateCaptureDomain : StateBase
+public class StateCaptureDomain : IState
 {
-    public StateCaptureDomain(Context context) : base(context)
-    {
-    }
-
-    public override IState GetNextState()
+    public IState GetNextState(Context context)
     {
         var length = 0;
 
-        while (ContinueLooping())
+        while (ContinueLooping(context))
         {
-            Context.AdvancePosition();
+            context.AdvancePosition();
             length++;
         }
 
-        if (length == 0 || !CharacterMatch.IsDot(Context.CurrentCharacter)) 
-            return new StateAdvanceToNextWord(Context);
+        if (length == 0 || !CharacterMatch.IsDot(context.CurrentCharacter)) 
+            return new StateAdvanceToNextWord();
         
-        Context.AdvancePosition();
-        return new StateCaptureTopLevelDomain(Context);
-
+        context.AdvancePosition();
+        return StateFactory.Get<StateCaptureTopLevelDomain>();
     }
 
-    private bool ContinueLooping()
+    private static bool ContinueLooping(Context context)
     {
-        return CharacterMatch.IsAlphanumeric(Context.CurrentCharacter);
+        return CharacterMatch.IsAlphanumeric(context.CurrentCharacter);
     }
 }

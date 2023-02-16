@@ -2,20 +2,16 @@
 
 namespace StateMachine.MVC.Email;
 
-public class StateStartOfWord : StateBase
+public class StateStartOfWord : IState
 {
-    public StateStartOfWord(Context context) : base(context)
+    public IState GetNextState(Context context)
     {
-    }
-
-    public override IState GetNextState()
-    {
-        while (!Context.IsComplete)
+        while (!context.IsComplete)
         {
-            if (CharacterMatch.IsAlphanumericOrSymbol(Context.CurrentCharacter))
-                return new StateCaptureName(Context);
+            if (CharacterMatch.IsAlphanumericOrSymbol(context.CurrentCharacter))
+                return StateFactory.Get<StateCaptureName>();
             
-            Context.AdvancePosition();
+            context.AdvancePosition();
         }
 
         return this;

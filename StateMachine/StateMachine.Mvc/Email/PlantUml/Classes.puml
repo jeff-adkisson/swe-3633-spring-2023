@@ -1,0 +1,66 @@
+@startuml
+left to right direction
+skinparam classAttributeIconSize 0
+
+class Context {
+    + Context(textToScan:string?)
+    + Matches : IEnumerable<Match> <<get>> = new()
+    + IsComplete : bool <<get>>
+    + CurrentCharacter : char <<get>>
+    + AddMatch() : void
+    + AdvancePosition() : void
+    + SetCurrentStartIndex() : void
+}
+
+
+class StateFactory <<static>> {
+    + {static} GetState(state:State) : IState
+}
+note top of StateFactory : Used by IState.GetNextState() to return the next state
+
+class Finder <<static>> {
+    + {static} Find(text:string?) : Match[]
+}
+note top of Finder : Executes state machine and returns Match array
+
+class Match {
+    + EmailAddress : string <<get>>
+    + StartIndex : int <<get>>
+}
+Finder -- Match : 0..*
+
+interface IState {
+    GetNextState(context:Context) : IState
+}
+class StateAddEmailAddress {
+    + GetNextState(context:Context) : IState
+}
+
+IState <|.. StateAddEmailAddress
+class StateCaptureDomain {
+    + GetNextState(context:Context) : IState
+}
+
+IState <|.. StateCaptureDomain
+class StateCaptureName {
+    + GetNextState(context:Context) : IState
+}
+
+IState <|.. StateCaptureName
+class StateCaptureTopLevelDomain {
+   + GetNextState(context:Context) : IState
+}
+
+IState <|.. StateCaptureTopLevelDomain
+class StateStartOfWord {
+    + GetNextState(context:Context) : IState
+}
+
+IState <|.. StateStartOfWord
+class StateAdvanceToNextWord {
+    + GetNextState(context:Context) : IState
+}
+
+IState <|.. StateAdvanceToNextWord
+
+@enduml

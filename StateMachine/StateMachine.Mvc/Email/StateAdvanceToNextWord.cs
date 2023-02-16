@@ -1,22 +1,18 @@
 namespace StateMachine.MVC.Email;
 
-public class StateAdvanceToNextWord : StateBase
+public class StateAdvanceToNextWord : IState
 {
-    public StateAdvanceToNextWord(Context context) : base(context)
+    public IState GetNextState(Context context)
     {
-    }
-
-    public override IState GetNextState()
-    {
-        while (ContinueLooping())
+        while (ContinueLooping(context))
         {
-            Context.AdvancePosition();
+            context.AdvancePosition();
         }
-        return new StateStartOfWord(Context);
+        return StateFactory.Get<StateStartOfWord>();
     }
 
-    private bool ContinueLooping()
+    private static bool ContinueLooping(Context context)
     {
-        return !Context.IsComplete && !CharacterMatch.IsWordBreak(Context.CurrentCharacter);
+        return !context.IsComplete && !CharacterMatch.IsWordBreak(context.CurrentCharacter);
     }
 }

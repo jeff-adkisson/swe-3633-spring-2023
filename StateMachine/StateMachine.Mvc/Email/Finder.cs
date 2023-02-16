@@ -5,9 +5,9 @@ public static class Finder
     public static Match[] Find(string? text)
     {
         var context = new Context(text);
-        var state = new StateStartOfWord(context) as IState;
+        var state = StateFactory.Get<StateStartOfWord>();
         while (!context.IsComplete) {
-            state = state.GetNextState();
+            state = state.GetNextState(context);
         }
 
         return context.Matches.ToArray();

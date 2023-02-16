@@ -1,7 +1,0 @@
-@startuml
-class StateCaptureName {
-    + StateCaptureName(context:Context)
-    + <<override>> GetNextState() : IState
-}
-StateBase <|-- StateCaptureName
-@enduml
