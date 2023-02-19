@@ -1,0 +1,25 @@
+@startuml
+[*] --> StartOfWord : Receiving block of ANSII text
+
+StartOfWord : Loop until [azAZ09-.] found or complete
+StartOfWord --> CaptureName : Found valid char
+StartOfWord --> Complete : No more chars to process
+
+CaptureName : Record start index\nLoop while [azAZ09-.] found or @ char
+CaptureName --> CaptureDomain : Found @ char
+CaptureName --> StartOfWord : Found invalid char
+
+CaptureDomain : Loop while [azAZ09] found or . char
+CaptureDomain --> CaptureTopLevelDomain : Found . char
+CaptureDomain --> StartOfWord : Found invalid char
+
+CaptureTopLevelDomain : Loop while 2 to 10 [azAZ09] chars found
+CaptureTopLevelDomain --> StartOfWord : Found invalid char
+CaptureTopLevelDomain --> AddEmailAddress : End of top level domain found
+
+AddEmailAddress : Add address and start index to context output array
+AddEmailAddress --> StartOfWord : Start looking for\nnext email address
+
+Complete : End of text reached
+Complete --> [*] : Context contains\nvalid email array
+@enduml
