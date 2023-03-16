@@ -50,7 +50,7 @@ This state machine does not detect multiple subdomains, such as Jeff@Kennesaw.St
    * Found 2 Email Addresses:
      1. Jeff-Adkisson@KSU.edu, 0
      2. j.adkisson@KSU.edu, 99<br/><br/> 
-    [Search Another?]
+      [Search Another?]
 
 --------------------
 
@@ -104,7 +104,14 @@ This state machine does not detect multiple subdomains, such as Jeff@Kennesaw.St
 
 This is an honors project and therefore will require you to work out the solution on your own. I can clarify requirements or review specific issues you might have, but I cannot provide coding assistance. The topics covered in this project are covered in some form later in the semester. I do not advise waiting for that. Also, this project goes deeper than the course will on state machines, so you might need to do some research.
 
---------------------
+-------
+
 ## Example Solution
 
-Review the `StateMachine.MVC` project.
+Review the `StateMachine.MVC` project. The `README.md` file in that folder explains how to execute the project.
+
+![demo-mvc](assets/README/demo-mvc.gif)
+
+!](demo-mvc.gif)
+
+--------------------
