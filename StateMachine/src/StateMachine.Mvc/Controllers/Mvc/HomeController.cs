@@ -21,6 +21,8 @@ public class HomeController : Controller
     [HttpPost]
     public IActionResult Index(FindEmailAddressesModel model)
     {
+        _logger.Log(LogLevel.Debug, "POST Received to {controller} {name} method", nameof(HomeController), nameof(Index));
+
         _logger.Log(LogLevel.Debug, "Text to scan: {TextToScan}", model.Text);
         var matches = Email.Finder.Find(model.Text).ToList();
         
