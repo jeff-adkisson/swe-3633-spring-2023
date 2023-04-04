@@ -9,4 +9,4 @@ Demonstrates the voice recorder state transition example from learning module 14
 
 # Diagram
 
-![diagram](/assets/state-diagram.png)
+![diagram](state-diagram.png)
