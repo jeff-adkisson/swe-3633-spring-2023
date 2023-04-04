@@ -1,0 +1,3 @@
+﻿using VoiceRecorderState;
+
+VoiceRecorder.Start();
