@@ -1,0 +1,60 @@
+﻿@model Mvc_Coffee.Models.DrinkMenu.DrinkModel
+
+@{
+    ViewData["Title"] = "Drink Menu";
+}
+
+<div class="jumbotron jumbotron-fluid d-flex align-items-center" style="background-image: url('/images/drinkMenu/@Model.Image');
+">
+    <div class="w-100 text-center" style="background-color:rgba(0,0,0,.7)">
+        <h1 class="display-3 mt-3">@Model.Name</h1>
+        <div class="text-white pt-3 pb-1 mb-3" style="background-color:rgba(0,0,0,.5)">
+            <h3 class="text-warning">@Html.FormatValue(Model.BasePrice, "{0:C2}")</h3>
+            <p>
+                <em class="text-info">@Model.BaseDescription</em>
+            </p>
+        </div>
+        <div class="mb-5 w-100 d-flex justify-content-center">
+            <div style="max-height:175px;overflow-y: auto">
+                <table class="mx-4">
+                    @foreach (var customization in Model.Customizations)
+                    {
+                        <tr>
+                            <td><input type="checkbox" id="@customization.Url" class="mr-2"/></td>
+                            <td><label for="@customization.Url">@customization.Name</label></td>
+                            <td>
+                                <span class="ml-3 text-warning"><strong>
+                                        <label for="@customization.Url">
+                                            @Html.FormatValue(customization.Price, "{0:C2}")
+                                        </label>
+                                    </strong>
+                                </span>
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+
+            <a href="#" class="ml-3">
+                <button type="button" class="btn btn-lg btn-success mb-4">Order</button>
+            </a>
+
+            <a asp-area="" asp-controller="DrinkMenu" asp-action="Index" class="ml-3">
+                <button type="button" class="btn btn-lg btn-link mb-4">Cancel</button>
+            </a>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    <script>
+        const jumbotronSize = function () { 
+            $(".jumbotron").css({ height: ($(window).height() - 180) + "px" }); 
+        };
+        jumbotronSize();
+        
+        $(window).on("resize", jumbotronSize);
+    </script>
+}

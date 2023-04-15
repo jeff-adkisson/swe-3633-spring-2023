@@ -1,0 +1,19 @@
+﻿@model IReadOnlyList<Mvc_Coffee.Models.DrinkMenu.DrinkModel>
+
+@{
+    ViewData["Title"] = "Drink Menu";
+}
+
+<div class="row d-flex justify-content-center">
+    @foreach (var drink in Model)
+        {
+            <a asp-area="" asp-controller="DrinkMenu" asp-action="Customize" asp-route-id="@drink.Url">
+                <div class="card mr-5 mb-5" style="width: 300px;">
+                    <img class="card-img-top" src="/images/drinkMenu/@drink.Image" alt="@drink.Name" style="width:300px;">
+                    <div class="card-body">
+                        <h5 class="card-title" style="height: 2rem">@drink.Name</h5>
+                    </div>
+                </div>
+            </a>
+        }
+</div>

@@ -1,0 +1,81 @@
+@startuml
+
+'disable non-standard visibility icons
+skinparam classAttributeIconSize 0 
+
+package Client {
+  class Program { 
+    Main()
+  }
+}
+
+
+package RegistrationState {
+
+    enum Transition {
+        Open,
+        AddStudent,
+        Close,
+        Cancel
+    }
+
+    class Context {
+        + string CourseName
+        + int StudentCountCount
+        + IState CurrentState
+        
+        + Do(Transition)
+        + ChangeState(IState)
+    }
+
+    interface IState {
+      {abstract} Do(Transition)
+    }
+
+    abstract class StateBase { 
+        # Context
+
+        # StateBase(Context)
+        + {abstract} Do(Transition)
+    }
+
+    class StateInitialization {
+        + StateInitialization(Context)
+        + Do(Transition) 
+        - InitializeCourse()
+        - OpenCourse()
+        - CancelCourse()
+    }
+
+    class StateOpen{
+        + StateOpen(Context)
+        + Do(Transition) 
+        - AddStudent()
+        - CancelCourse()
+    }
+
+    class StateCancelled {
+        + StateCancelled(Context)
+        + Do(Transition) 
+        - NotifyRegisteredStudents()
+    }
+
+
+    class StateClosed {
+        + StateClosed(Context)
+        + Do(Transition) 
+        - FinalizeCourse()
+        - CancelCourse()
+    }
+
+    IState -> Transition
+    IState <|.. StateBase 
+    StateBase *- Context
+    StateBase <|-- StateInitialization 
+    StateBase <|-- StateOpen
+    StateBase <|-- StateCancelled 
+    StateBase <|-- StateClosed 
+}
+
+Program::Main --> Context::Do
+@enduml

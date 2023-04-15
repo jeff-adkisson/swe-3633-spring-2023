@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Management Page";
+}
+
+<div class="management">
+    <div class="jumbotron jumbotron-fluid d-flex align-items-center">
+        <div class="w-100 text-center" style="background-color:rgba(0,0,0,.7)">
+            <h1 class="display-3 my-3">Management Tools</h1>
+            <a asp-area="" asp-controller="CsvExtract" asp-action="DrinkMenu">
+                <button type="button" class="btn btn-lg btn-success mb-4">Download Drink Menu as CSV</button>
+            </a>
+        </div>
+    </div>
+</div>

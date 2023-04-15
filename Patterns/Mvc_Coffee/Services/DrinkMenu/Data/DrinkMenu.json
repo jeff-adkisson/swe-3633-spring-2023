@@ -1,0 +1,107 @@
+[
+    {
+        "Name": "Latte",
+        "BaseDescription": "Medium, Hot, 2% Milk, 2 Shots, Unsweetened",
+        "Image": "latte.png",
+        "BasePrice": 4.00,
+        "Customizations": [
+            { "Name": "Foam B | Lots of Foam", "Price": 0.00 },
+            { "Name": "Foam A | No Foam", "Price": 0.00 },
+            { "Name": "Size C | Mega", "Price": 2.00 },
+            { "Name": "Size B | Large", "Price": 1.00 },
+            { "Name": "Size A | Small", "Price": -1.00 },
+            { "Name": "Creamer E | Soy Milk", "Price": 1.50 },
+            { "Name": "Creamer D | Almond Milk", "Price": 1.50 },
+            { "Name": "Creamer C | Oat Milk", "Price": 1.50 },
+            { "Name": "Creamer B | Whole Milk", "Price": 0.00 },
+            { "Name": "Creamer A | Non-Fat Milk", "Price": 0.00 },
+            { "Name": "Espresso | 1 Extra Shot", "Price": 1.25 },
+            { "Name": "Caffeine | Decaffeinated", "Price": 0.00 },
+            { "Name": "Sweetener C | 1 Sweet'N Low'", "Price": 0.00 },
+            { "Name": "Sweetener B | 1 Stevia", "Price": 0.00 },
+            { "Name": "Sweetener A | 1 Sugar", "Price": 0.00 },
+            { "Name": "Temperature B | Very Hot", "Price": 0.00 },
+            { "Name": "Temperature A | Less Hot", "Price": 0.00 }
+        ]
+    },
+    {
+        "Name": "Iced Latte",
+        "BaseDescription": "Medium, Cold, 2% Milk, 2 Shots, Unsweetened",
+        "BasePrice": 5.25,
+        "Image": "iced-latte.png",
+        "Customizations": [
+            { "Name": "Size A | Large", "Price": 1.00 },
+            { "Name": "Creamer E | Soy Milk", "Price": 1.50 },
+            { "Name": "Creamer D | Almond Milk", "Price": 1.50 },
+            { "Name": "Creamer C | Oat Milk", "Price": 1.50 },
+            { "Name": "Creamer B | Whole Milk", "Price": 0.00 },
+            { "Name": "Creamer A | Non-Fat Milk", "Price": 0.00 },
+            { "Name": "Espresso | 1 Extra Shot", "Price": 1.25 },
+            { "Name": "Caffeine | Decaffeinated", "Price": 0.00 },
+            { "Name": "Sweetener C | 1 Sweet'N Low'", "Price": 0.00 },
+            { "Name": "Sweetener B | 1 Stevia", "Price": 0.00 },
+            { "Name": "Sweetener A | 1 Sugar", "Price": 0.00 },
+            { "Name": "Ice B | Extra Ice", "Price": 0.00 },
+            { "Name": "Ice A | No Ice", "Price": 0.00 }
+        ]
+    },
+    {
+        "Name": "Iced Matcha Green Tea Latte",
+        "BaseDescription": "Medium, Hot, 2% Milk, 2 Shots",
+        "BasePrice": 4.00,
+        "Image": "iced-matcha-latte.png",
+        "Customizations": [
+            { "Name": "Size A | Large", "Price": 1.00 },
+            { "Name": "Creamer E | Soy Milk", "Price": 1.50 },
+            { "Name": "Creamer D | Almond Milk", "Price": 1.50 },
+            { "Name": "Creamer C | Oat Milk", "Price": 1.50 },
+            { "Name": "Creamer B | Whole Milk", "Price": 0.00 },
+            { "Name": "Creamer A | Non-Fat Milk", "Price": 0.00 },
+            { "Name": "Matcha | 1 Extra Dose", "Price": 2.50 },
+            { "Name": "Sweetener C | 1 Sweet'N Low'", "Price": 0.00 },
+            { "Name": "Sweetener B | 1 Stevia", "Price": 0.00 },
+            { "Name": "Sweetener A | 1 Sugar", "Price": 0.00 },
+            { "Name": "Ice B | Extra Ice", "Price": 0.00 },
+            { "Name": "Ice A | No Ice", "Price": 0.00 }
+        ]
+    },
+    {
+        "Name": "Coffee",
+        "BaseDescription": "Medium Brewed Coffee, Hot, Unsweetened",
+        "BasePrice": 2.50,
+        "Image": "coffee.png",
+        "Customizations": [
+            { "Name": "Size C | Mega", "Price": 2.00 },
+            { "Name": "Size B | Large", "Price": 1.00 },
+            { "Name": "Size A | Small", "Price": -0.50 },
+            { "Name": "Creamer F | Soy Milk", "Price": 1.50 },
+            { "Name": "Creamer E | Almond Milk", "Price": 1.50 },
+            { "Name": "Creamer D | Oat Milk", "Price": 1.50 },
+            { "Name": "Creamer C | Whole Milk", "Price": 0.00 },
+            { "Name": "Creamer B | Non-Fat Milk", "Price": 0.00 },
+            { "Name": "Creamer A | Room for Cream", "Price": 0.00 },
+            { "Name": "Espresso | 1 Extra Shot", "Price": 1.25 },
+            { "Name": "Sweetener C | 1 Sweet'N Low'", "Price": 0.00 },
+            { "Name": "Sweetener B | 1 Stevia", "Price": 0.00 },
+            { "Name": "Sweetener A | 1 Sugar", "Price": 0.00 },
+            { "Name": "Temperature B | Very Hot", "Price": 0.00 },
+            { "Name": "Temperature A | Less Hot", "Price": 0.00 }
+        ]
+    },
+    {
+        "Name": "Iced Water",
+        "BaseDescription": "Small Ice Water",
+        "BasePrice": 0.00,
+        "Image": "iced-water.png",
+        "Customizations": [ ]
+    },
+    {
+        "Name": "Espresso",
+        "BaseDescription": "Espresso Shot, Hot, Unsweetened",
+        "BasePrice": 2.50,
+        "Image": "espresso.png",
+        "Customizations": [ 
+            { "Name": "Espresso | 1 Extra Shot", "Price": 1.25 }
+        ]
+    }
+]
