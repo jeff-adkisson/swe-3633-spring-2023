@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WackyChat", "WackyChat.csproj", "{EF113D26-D765-4721-AF5F-11CD44540AB2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WackyChatWinForms", "WackyChatWinForms.csproj", "{EF113D26-D765-4721-AF5F-11CD44540AB2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,6 +1,6 @@
 using System.Text.RegularExpressions;
 
-namespace WackyChat;
+namespace WackyChatWinForms;
 
 public class WackyChatMessage
 {

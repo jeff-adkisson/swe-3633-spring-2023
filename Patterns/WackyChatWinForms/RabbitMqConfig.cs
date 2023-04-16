@@ -1,7 +1,7 @@
-using Microsoft.Extensions.Configuration;
 using System.Diagnostics;
+using Microsoft.Extensions.Configuration;
 
-namespace WackyChat;
+namespace WackyChatWinForms;
 
 public class RabbitMqConfig
 {
@@ -13,7 +13,7 @@ public class RabbitMqConfig
 
         IConfiguration config = builder.Build();
 
-        return config.GetSection("RabbitMq").Get<RabbitMqConfig>();
+        return config.GetSection("RabbitMq").Get<RabbitMqConfig>()!;
     }
     
     public string User { get; set; } = "UserNotSet";

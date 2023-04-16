@@ -1,4 +1,4 @@
-﻿namespace WackyChat;
+﻿namespace WackyChatWinForms;
 
 partial class MainForm
 {

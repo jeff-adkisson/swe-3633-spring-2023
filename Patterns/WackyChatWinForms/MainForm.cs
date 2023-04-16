@@ -1,7 +1,6 @@
 using EasyNetQ;
-using System.Diagnostics;
 
-namespace WackyChat;
+namespace WackyChatWinForms;
 
 public partial class MainForm : Form
 {
