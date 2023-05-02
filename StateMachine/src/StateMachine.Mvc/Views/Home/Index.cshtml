@@ -1,0 +1,108 @@
+﻿@model StateMachine.MVC.Models.FindEmailAddressesModel
+
+@{
+    ViewData["Title"] = "Find Email Addresses";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+            {
+                <div class="form-group">
+                    @Html.LabelFor(l => l.Text, "Text to scan for valid email addresses")
+                    @Html.TextAreaFor(m => m.Text, new { @class = "form-control", rows = 10 })
+                </div>
+                <button type="submit" class="btn btn-primary my-3">Find Email Addresses (MVC Post/View)</button>
+                <button type="button" onclick="callApi()" class="btn btn-secondary my-3 ms-2">Find Email Addresses (Async API Call via Script)</button>
+                <button type="button" onclick="forceReload()" class="btn btn-link my-3 ms-2">Reset</button>
+            }
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div id="output">
+                @if (Model.Matches != null)
+                {
+                    @if (Model.Matches.Any())
+                    {
+                        <strong>MVC: Found @Model.Matches.Count Valid Email Addresses:</strong>
+                        <ol>
+                            @foreach (var match in Model.Matches)
+                            {
+                                <li>@match.EmailAddress, @match.StartIndex</li>
+                            }
+                        </ol>
+                    }
+                    else
+                    {
+                        <strong>MVC: No Valid Email Addresses Found</strong>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+
+    <script>  
+    let forceReload = function() {
+        window.self.window.self.window.window.location = window.location
+    }
+    
+    let showResponse = function (response) {
+        
+       //write api response to dom
+       const output = document.getElementById("output");
+       const matches = response.matches;
+       output.innerHTML = '';
+       
+       if (matches.length === 0) {
+           output.innerHTML = "<strong>API+Script: No Valid Email Addresses Found</strong>";
+           return;
+       }
+       
+       //loop through matches and add to dom
+       let header = document.createElement("strong");
+       header.innerHTML = `API+Script: Found ${matches.length} Valid Email Addresses:`;
+       output.appendChild(header);
+       
+       let ul = document.createElement("ol");
+        for (let i = 0; i < response.matches.length; i++) {
+            let li = document.createElement("li");
+            li.innerHTML = `${response.matches[i].emailAddress}, ${response.matches[i].startIndex}`;
+            ul.appendChild(li);
+        }
+        output.appendChild(ul);
+        
+        //also show on console
+        console.log(response);
+    };
+    
+    let handleErrors = function(response) {
+        if (!response.ok) {
+            throw Error(response.statusText);
+        }
+        return response;
+    }
+    
+    let callApi = function () {
+        //call api, post text as json object
+        let data = { "text": document.getElementById('Text').value };
+        fetch('/api/email/find', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(handleErrors)
+        .then(response => response.json())
+        .then(response => showResponse(response))
+        .catch(function(error) {
+            console.log(error);
+         });
+    };
+</script>
+
+</div>

@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StateMachine.Mvc", "src\StateMachine.Mvc\StateMachine.Mvc.csproj", "{3962A7DE-80EC-487F-8047-2BC43E6A59EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StateMachine.Tests.Unit", "test\StateMachine.Tests.Unit\StateMachine.Tests.Unit.csproj", "{E262AB32-F65D-4986-AA00-9D4A4E5F1747}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution", "Solution", "{3C722BAC-2054-4FCD-9860-B8FD8D2DC5D5}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{BC2A9138-394F-4D9A-9BF8-DE66336A89A7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{F274811F-FDDD-4F2E-9C5B-44A111CC6F9D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3962A7DE-80EC-487F-8047-2BC43E6A59EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3962A7DE-80EC-487F-8047-2BC43E6A59EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3962A7DE-80EC-487F-8047-2BC43E6A59EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3962A7DE-80EC-487F-8047-2BC43E6A59EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E262AB32-F65D-4986-AA00-9D4A4E5F1747}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E262AB32-F65D-4986-AA00-9D4A4E5F1747}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E262AB32-F65D-4986-AA00-9D4A4E5F1747}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E262AB32-F65D-4986-AA00-9D4A4E5F1747}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3962A7DE-80EC-487F-8047-2BC43E6A59EE} = {BC2A9138-394F-4D9A-9BF8-DE66336A89A7}
+		{E262AB32-F65D-4986-AA00-9D4A4E5F1747} = {F274811F-FDDD-4F2E-9C5B-44A111CC6F9D}
+	EndGlobalSection
+EndGlobal
